@@ -20,7 +20,6 @@ class CreateEducationsTable extends Migration
             $table->bigInteger('start_year');
             $table->bigInteger('end_year');
             $table->bigInteger('user_id');
-            $table->softDeletes();
             $table->timestamps();
         });
     }

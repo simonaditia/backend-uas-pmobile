@@ -18,7 +18,6 @@ class CreateWorksTable extends Migration
             $table->string('name');
             $table->text('description');
             $table->bigInteger('user_id');
-            $table->softDeletes();
             $table->timestamps();
         });
     }

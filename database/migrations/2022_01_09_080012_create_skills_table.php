@@ -17,7 +17,6 @@ class CreateSkillsTable extends Migration
             $table->id();
             $table->string('name');
             $table->bigInteger('user_id');
-            $table->softDeletes();
             $table->timestamps();
         });
     }

@@ -4,42 +4,42 @@ namespace App\Http\Controllers\API;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
-use App\Models\Work;
+use App\Models\Skill;
 use App\Helpers\ResponseFormatter;
 
-class WorkController extends Controller
+class SkillController extends Controller
 {
     public function index()
     {
-    	$works = Work::all();
+    	$skills = Skill::all();
     	return ResponseFormatter::success([
-			'work' => $works,
-		], 'Get Works Success');
+			'Skill' => $skills,
+		], 'Get skills Success');
     }
 
     public function store(Request $request)
     {
-    	$work = Work::create($request->all());
+    	$skill = Skill::create($request->all());
     	return ResponseFormatter::success([
-			'work' => $work,
-		], 'Add Work Success');
+			'Skill' => $skill,
+		], 'Add Skill Success');
     }
 
     public function update(Request $request, $id)
     {
-    	$work = Work::find($id);
-    	$work->update($request->all());
+    	$skill = Skill::find($id);
+    	$skill->update($request->all());
     	return ResponseFormatter::success([
-			'work' => $work,
-		], 'Edit Work Success');
+			'Skill' => $skill,
+		], 'Edit Skill Success');
     }
 
     public function destroy($id)
     {
-    	$work = Work::find($id);
-    	$work->delete();
+    	$skill = Skill::find($id);
+    	$skill->delete();
     	return ResponseFormatter::success([
-			'work' => null,
-		], 'Delete Work Success');
+			'Skill' => null,
+		], 'Delete Skill Success');
     }
 }

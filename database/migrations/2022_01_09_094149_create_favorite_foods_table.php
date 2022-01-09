@@ -18,7 +18,6 @@ class CreateFavoriteFoodsTable extends Migration
             $table->string('name');
             $table->string('picture');
             $table->bigInteger('user_id');
-            $table->softDeletes();
             $table->timestamps();
         });
     }
