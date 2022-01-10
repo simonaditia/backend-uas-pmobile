@@ -10,6 +10,8 @@ class FavoriteFood extends Model
 {
     use HasFactory;
 
+    public $table = "educations";
+
     protected $fillable = [
     	'name',
     	'picture',

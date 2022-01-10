@@ -14,7 +14,7 @@ class WorkController extends Controller
     	$works = Work::all();
     	return ResponseFormatter::success([
 			'work' => $works,
-		], 'Get Works Success');
+		], 'Get Data Works Success');
     }
 
     public function store(Request $request)
@@ -22,7 +22,7 @@ class WorkController extends Controller
     	$work = Work::create($request->all());
     	return ResponseFormatter::success([
 			'work' => $work,
-		], 'Add Work Success');
+		], 'Add Data Work Success');
     }
 
     public function update(Request $request, $id)
@@ -31,7 +31,7 @@ class WorkController extends Controller
     	$work->update($request->all());
     	return ResponseFormatter::success([
 			'work' => $work,
-		], 'Edit Work Success');
+		], 'Edit Data Work Success');
     }
 
     public function destroy($id)
@@ -40,6 +40,6 @@ class WorkController extends Controller
     	$work->delete();
     	return ResponseFormatter::success([
 			'work' => null,
-		], 'Delete Work Success');
+		], 'Delete Data Work Success');
     }
 }

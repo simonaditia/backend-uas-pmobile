@@ -5,6 +5,9 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\API\UserController;
 use App\Http\Controllers\API\WorkController;
 use App\Http\Controllers\API\SkillController;
+use App\Http\Controllers\API\EducationController;
+use App\Http\Controllers\API\FavoriteFoodController;
+use App\Http\Controllers\API\HobbyController;
 
 /*
 |--------------------------------------------------------------------------
@@ -43,3 +46,18 @@ Route::get('/skills', [SkillController::class, 'index']);
 Route::post('/skills', [SkillController::class, 'store']);
 Route::put('/skills/{id}', [SkillController::class, 'update']);
 Route::delete('/skills/{id}', [SkillController::class, 'destroy']);
+
+Route::get('/educations', [EducationController::class, 'index']);	
+Route::post('/educations', [EducationController::class, 'store']);
+Route::put('/educations/{id}', [EducationController::class, 'update']);
+Route::delete('/educations/{id}', [EducationController::class, 'destroy']);
+
+Route::get('/favorite-foods', [FavoriteFoodController::class, 'index']);	
+Route::post('/favorite-foods', [FavoriteFoodController::class, 'store']);
+Route::put('/favorite-foods/{id}', [FavoriteFoodController::class, 'update']);
+Route::delete('/favorite-foods/{id}', [FavoriteFoodController::class, 'destroy']);
+
+Route::get('/hobbies', [HobbyController::class, 'index']);	
+Route::post('/hobbies', [HobbyController::class, 'store']);
+Route::put('/hobbies/{id}', [HobbyController::class, 'update']);
+Route::delete('/hobbies/{id}', [HobbyController::class, 'destroy']);

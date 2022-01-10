@@ -4,42 +4,42 @@ namespace App\Http\Controllers\API;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
-use App\Models\Skill;
+use App\Models\Hobby;
 use App\Helpers\ResponseFormatter;
 
-class SkillController extends Controller
+class HobbyController extends Controller
 {
     public function index()
     {
-    	$skills = Skill::all();
+    	$hobbies = Hobby::all();
     	return ResponseFormatter::success([
-			'Skill' => $skills,
-		], 'Get Data skills Success');
+			'Hobby' => $hobbies,
+		], 'Get Data Hobbys Success');
     }
 
     public function store(Request $request)
     {
-    	$skill = Skill::create($request->all());
+    	$hobby = Hobby::create($request->all());
     	return ResponseFormatter::success([
-			'Skill' => $skill,
-		], 'Add Data Skill Success');
+			'Hobby' => $hobby,
+		], 'Add Data Hobby Success');
     }
 
     public function update(Request $request, $id)
     {
-    	$skill = Skill::find($id);
-    	$skill->update($request->all());
+    	$hobby = Hobby::find($id);
+    	$hobby->update($request->all());
     	return ResponseFormatter::success([
-			'Skill' => $skill,
-		], 'Edit Data Skill Success');
+			'Hobby' => $hobby,
+		], 'Edit Data Hobby Success');
     }
 
     public function destroy($id)
     {
-    	$skill = Skill::find($id);
-    	$skill->delete();
+    	$hobby = Hobby::find($id);
+    	$hobby->delete();
     	return ResponseFormatter::success([
-			'Skill' => null,
-		], 'Delete Data Skill Success');
+			'Hobby' => null,
+		], 'Delete Data Hobby Success');
     }
 }
